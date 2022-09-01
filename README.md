@@ -1,6 +1,8 @@
-# AppTodo
+# App To-do
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+
+![lif8VbT](https://user-images.githubusercontent.com/112647998/188006332-c0b71716-9123-45e1-bd2c-cec9284c2d75.gif)
 
 ## Development server
 
