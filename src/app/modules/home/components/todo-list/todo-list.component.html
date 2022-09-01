@@ -1,0 +1,16 @@
+<!-- Quando a lista estiver vazia, aparecer o loading -->
+<section [ngClass]="{'loading': !taskList.length}">
+    <!-- Se ela não estiver vazia, aparecer seus itens -->
+    <ul *ngIf="taskList.length">
+        <li *ngFor="let item of taskList; let i = index">
+            <input type="checkbox" [(ngModel)]="item.checked">
+            <input type="text" (keyup)="validationInput(item.task, i)" [(ngModel)]="item.task" [ngClass]="{'checked': item.checked}">
+
+            <button (click)="deleteItemTaskList(i)">
+                <i class="fa-solid fa-trash" style="color: grey;"></i>
+            </button>
+        </li>
+    </ul>
+</section>
+<app-todo-input-add-itens (emitItemTaskList)="setEmitTaskList($event)"></app-todo-input-add-itens>
+<app-todo-button-delete-all *ngIf="taskList.length" (click)="deleteAllTaskList()"></app-todo-button-delete-all>
